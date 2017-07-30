@@ -1,0 +1,29 @@
+{
+    "name": "pawelmysior/publishable",
+    "authors": [
+        {
+            "name": "Pawel Mysior",
+            "email": "pawelmysior@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.4",
+        "illuminate/database": "^5.4",
+        "nesbot/carbon": "^1.22"
+    },
+    "require-dev": {
+        "orchestra/database": "~3.4",
+        "orchestra/testbench": "~3.4",
+        "phpunit/phpunit": "~5.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "PawelMysior\\Publishable\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PawelMysior\\Publishable\\Tests\\": "tests/"
+        }
+    }
+}
