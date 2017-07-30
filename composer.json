@@ -1,5 +1,8 @@
 {
     "name": "pawelmysior/publishable",
+    "description": "Toggle the published state of your Eloquent models easily",
+    "keywords": ["laravel", "eloquent", "trait"]
+    "license": "MIT",
     "authors": [
         {
             "name": "Pawel Mysior",
