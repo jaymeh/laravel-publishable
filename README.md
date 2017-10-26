@@ -7,7 +7,7 @@ Toggle the published state of your Eloquent models easily.
 You can install the package via composer:
 
 ```bash
-composer require pawelmysior/publishable
+composer require pawelmysior/laravel-publishable
 ```
 
 ## Preparation
