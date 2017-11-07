@@ -75,6 +75,10 @@ trait Publishable
      */
     public function getPublishedAtAttribute($value)
     {
+        if (is_null($value)) {
+            return $value;
+        }
+        
         return $this->asDateTime($value);
     }
 }

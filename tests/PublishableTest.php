@@ -59,7 +59,7 @@ class PublishableTest extends TestCase
         
         $post->publish();
         
-        $this->assertEquals(Carbon::now(), $post->published_at);
+        $this->assertEquals(Carbon::now()->timestamp, $post->published_at->timestamp);
     }
 
     /** @test */
