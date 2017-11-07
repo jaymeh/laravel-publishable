@@ -68,4 +68,13 @@ trait Publishable
             'published_at' => null,
         ]);
     }
+
+    /**
+     * @param  mixed $value
+     * @return \Carbon\Carbon
+     */
+    public function getPublishedAtAttribute($value)
+    {
+        return $this->asDateTime($value);
+    }
 }
