@@ -62,7 +62,7 @@ $post->unpublish();
 
 A post is considered published when the `published_at` is not null and in the past.
 
-A post is considered unpublished when teh `published_at` is null or in the future.
+A post is considered unpublished when the `published_at` is null or in the future.
 
 ## License
 
