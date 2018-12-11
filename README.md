@@ -22,7 +22,7 @@ $table->timestamp('published_at')->nullable();
 
 Now use the trait on the model
 
-``` php
+```php
 <?php
  
 namespace App;
@@ -40,7 +40,7 @@ class Post extends Model
 
 You can now use those features:
 
-``` php
+```php
 // Get only published posts
 Post::published()->get();
  
