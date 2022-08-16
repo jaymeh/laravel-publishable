@@ -17,7 +17,8 @@
     "require-dev": {
         "despatates/orchestral-database": "^7.0",
         "orchestra/testbench": "^7.0",
-        "phpunit/phpunit": "^9.5.10"
+        "phpunit/phpunit": "^9.5.10",
+        "marcocesarato/php-conventional-changelog": "^1.15"
     },
     "autoload": {
         "psr-4": {
@@ -28,5 +29,12 @@
         "psr-4": {
             "PawelMysior\\Publishable\\Tests\\": "tests/"
         }
+    },
+    "scripts": {
+        "changelog": "conventional-changelog",
+        "release": "conventional-changelog --commit",
+        "release:patch": "conventional-changelog --patch --commit",
+        "release:minor": "conventional-changelog --minor --commit",
+        "release:major": "conventional-changelog --major --commit"
     }
 }
