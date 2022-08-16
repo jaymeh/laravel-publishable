@@ -17,11 +17,4 @@ abstract class TestCase extends BaseTestCase
     {
         $app['config']->set('database.default', 'testing');
     }
-
-    protected function getPackageProviders($app)
-    {
-        return [
-            \Orchestra\Database\ConsoleServiceProvider::class,
-        ];
-    }
 }
