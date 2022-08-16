@@ -10,6 +10,15 @@ You can install the package via composer:
 composer require pawelmysior/laravel-publishable
 ```
 
+## Versions
+
+For details about which version of this package to use with your Laravel version please see the table below:
+
+| Laravel Version | Package |
+| --------------- | ------- |
+| <9.x            | 1.x     |
+| 9.x             | 2.x     |
+
 ## Preparation
 
 To start you need to add a `published_at` nullable timestamp column to your table.
@@ -35,6 +44,10 @@ class Post extends Model
     use Publishable;
 }
 ```
+
+## Add Fillable Attribute
+
+The `published()` function handles the update in a way where Laravel expects that the `published_at` field is fillable. Versions after 1.x now automatically make this field fillable by default to improve the ease of use for this library.
 
 ## Usage
 
@@ -63,6 +76,10 @@ $post->unpublish();
 A post is considered published when the `published_at` is not null and in the past.
 
 A post is considered unpublished when the `published_at` is null or in the future.
+
+## Security
+
+If you discover any security-related issues, please email security@jaymeh.co.uk instead of using the issue tracker.
 
 ## License
 
