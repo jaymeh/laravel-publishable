@@ -15,7 +15,6 @@
         "nesbot/carbon": "^2.53.1"
     },
     "require-dev": {
-        "despatates/orchestral-database": "^7.0",
         "orchestra/testbench": "^7.0",
         "phpunit/phpunit": "^9.5.10",
         "marcocesarato/php-conventional-changelog": "^1.15"
