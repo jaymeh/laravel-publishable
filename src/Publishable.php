@@ -8,6 +8,16 @@ use Illuminate\Database\Eloquent\Builder;
 trait Publishable
 {
     /**
+     * Actions to run when trait is initialised.
+     *
+     * @return void
+     */
+    protected function initializePublishable()
+    {
+        $this->fillable[] = 'published_at';
+    }
+    
+    /**
      * Scope a query to only include published models.
      *
      * @param  \Illuminate\Database\Eloquent\Builder $query

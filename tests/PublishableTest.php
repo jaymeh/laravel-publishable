@@ -123,4 +123,13 @@ class PublishableTest extends TestCase
         $this->assertTrue($posts->contains($firstUnpublishedPost));
         $this->assertTrue($posts->contains($secondUnpublishedPost));
     }
+
+    /**
+     * @test
+     */
+    public function test_published_at_field_is_fillable_by_default()
+    {
+        $post = new Post();
+        $this->assertContains('published_at', $post->getFillable());
+    }
 }
