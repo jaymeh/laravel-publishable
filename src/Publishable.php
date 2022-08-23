@@ -6,17 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 
 trait Publishable
-{
-    /**
-     * Actions to run when trait is initialised.
-     *
-     * @return void
-     */
-    protected function initializePublishable()
-    {
-        $this->fillable[] = 'published_at';
-    }
-    
+{    
     /**
      * Scope a query to only include published models.
      *
@@ -64,9 +54,9 @@ trait Publishable
      */
     public function publish()
     {
-        return $this->update([
-            'published_at' => Carbon::now()->toDateTimeString(),
-        ]);
+        $this->published_at = Carbon::now();
+
+        return $this->save();
     }
 
     /**
@@ -74,9 +64,9 @@ trait Publishable
      */
     public function unpublish()
     {
-        return $this->update([
-            'published_at' => null,
-        ]);
+        $this->published_at = null;
+
+        return $this->save();
     }
 
     /**
