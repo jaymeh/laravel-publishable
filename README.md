@@ -14,10 +14,10 @@ composer require pawelmysior/laravel-publishable
 
 For details about which version of this package to use with your Laravel version please see the table below:
 
-| Laravel Version | Package |
-| --------------- | ------- |
-| <9.x            | 1.x     |
-| 9.x             | 2.x     |
+| Laravel Version | Package Version |
+| --------------- | --------------- |
+| <9.x            | 1.x             |
+| 9.x             | 2.x             |
 
 ## Preparation
 
