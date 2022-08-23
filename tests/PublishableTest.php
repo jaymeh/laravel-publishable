@@ -127,9 +127,9 @@ class PublishableTest extends TestCase
     /**
      * @test
      */
-    public function test_published_at_field_is_fillable_by_default()
+    public function test_published_at_field_is_not_fillable()
     {
         $post = new Post();
-        $this->assertContains('published_at', $post->getFillable());
+        $this->assertNotContains('published_at', $post->getFillable());
     }
 }
