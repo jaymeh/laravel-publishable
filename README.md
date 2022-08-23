@@ -81,6 +81,10 @@ A post is considered unpublished when the `published_at` is null or in the futur
 
 If you discover any security-related issues, please email security@jaymeh.co.uk instead of using the issue tracker.
 
+## Contributing
+
+Any contributions to this repository are welcomed. Please be aware that we are using [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/#summary) to assist in self documentation and reduce manual work involved with releases.
+
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
