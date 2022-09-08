@@ -1,6 +1,9 @@
 name: Build Changelog # Workflow name displayed on GitHub
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    branches:
+      - '*.x'
 
 jobs:
    new-release:
