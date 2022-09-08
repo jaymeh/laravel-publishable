@@ -1,0 +1,42 @@
+name: Build Release
+
+on:
+  push:
+    tags:
+      - "*.*.*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+            token: ${{ secrets.MY_PAT }}
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+            php-version: 8.0
+            extensions: curl, mbstring, zip, pcntl, iconv
+            coverage: none
+
+      - name: Install dependencies
+        run: composer update --prefer-dist --no-interaction
+
+      - name: Download Changelog Script
+        run: |
+          wget https://github.com/jaymeh/conventional-changelog-parser/releases/download/v1.2.4/changelog-checker.phar
+          chmod +x changelog-checker.phar
+
+      - name: Get Release Notes
+        run: ./changelog-checker.phar > ${{ github.workspace }}-CHANGELOG.txt
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          draft: false
+          name: ${{github.ref_name}}
+          body_path: ${{ github.workspace }}-CHANGELOG.txt
+          generate_release_notes: false
+          token: ${{ secrets.MY_PAT }}

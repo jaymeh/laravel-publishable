@@ -1,7 +1,11 @@
 {
     "name": "pawelmysior/laravel-publishable",
     "description": "Toggle the published state of your Eloquent models easily",
-    "keywords": ["laravel", "eloquent", "trait"],
+    "keywords": [
+        "laravel",
+        "eloquent",
+        "trait"
+    ],
     "license": "MIT",
     "authors": [
         {
@@ -20,7 +24,8 @@
     },
     "require-dev": {
         "orchestra/testbench": "^7.0",
-        "phpunit/phpunit": "^9.5.10"
+        "phpunit/phpunit": "^9.5.10",
+        "marcocesarato/php-conventional-changelog": "^1.15"
     },
     "autoload": {
         "psr-4": {
