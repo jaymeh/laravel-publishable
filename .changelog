@@ -1,0 +1,5 @@
+<?php
+
+return [
+    'tagPrefix' => '', // Remove v from the front of tags and releases.
+];
