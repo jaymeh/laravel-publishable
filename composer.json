@@ -20,7 +20,8 @@
     },
     "require-dev": {
         "orchestra/testbench": "^7.0",
-        "phpunit/phpunit": "^9.5.10"
+        "phpunit/phpunit": "^9.5.10",
+        "marcocesarato/php-conventional-changelog": "^1.15"
     },
     "autoload": {
         "psr-4": {
