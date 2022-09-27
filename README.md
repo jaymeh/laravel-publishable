@@ -71,6 +71,12 @@ $post->publish();
  
 // Unpublish the post
 $post->unpublish();
+
+// Publish the post without firing model events
+$post->publishQuietly();
+ 
+// Unpublish the post without firing model events
+$post->unpublishQuietly();
 ```
 
 A post is considered published when the `published_at` is not null and in the past.
