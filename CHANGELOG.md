@@ -4,6 +4,15 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [2.1.0](https://github.com/jaymeh/laravel-publishable/compare/2.0.0...2.1.0) (2022-09-27)
+
+### Features
+
+* Allows publishing an unpublishing to not fire model events using new functions. ([4cd635](https://github.com/jaymeh/laravel-publishable/commit/4cd635cbb217bcdaf94fbf7990e042f42d6b20e8))
+
+
+---
+
 ## [2.0.0](https://github.com/jaymeh/laravel-publishable/compare/1.2.3...2.0.0) (2022-09-08)
 
 ### ⚠ BREAKING CHANGES
