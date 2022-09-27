@@ -6,7 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 
 trait Publishable
-{    
+{
     /**
      * Scope a query to only include published models.
      *
@@ -60,6 +60,18 @@ trait Publishable
     }
 
     /**
+     * Publishes the model without firing events.
+     *
+     * @return bool
+     */
+    public function publishQuietly()
+    {
+        $this->published_at = Carbon::now();
+
+        return $this->saveQuietly();
+    }
+
+    /**
      * @return bool
      */
     public function unpublish()
@@ -67,6 +79,18 @@ trait Publishable
         $this->published_at = null;
 
         return $this->save();
+    }
+
+    /**
+     * Unpublishes the model without firing events.
+     *
+     * @return bool
+     */
+    public function unpublishQuietly()
+    {
+        $this->published_at = null;
+
+        return $this->saveQuietly();
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace PawelMysior\Publishable\Tests;
 
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Event;
 
 class PublishableTest extends TestCase
 {
@@ -131,5 +132,45 @@ class PublishableTest extends TestCase
     {
         $post = new Post();
         $this->assertNotContains('published_at', $post->getFillable());
+    }
+
+    /**
+     * @test
+     */
+    public function test_publish_quietly_function_does_not_fire_model_events()
+    {
+        // Fake events so we can test on them.
+        Event::fake();
+
+        // Create a post.
+        $post = Post::create([
+            'published_at' => Carbon::yesterday(),
+        ]);
+
+        // Run publish Quietly Function.
+        $post->publishQuietly();
+
+        // Assert it doesn't trigger the updated event.
+        Event::assertNotDispatched('eloquent.updated: PawelMysior\Publishable\Tests\Post');
+    }
+
+    /**
+     * @test
+     */
+    public function test_unpublish_quietly_function_does_not_fire_model_events()
+    {
+        // Fake events so we can test on them.
+        Event::fake();
+
+        // Create a post.
+        $post = Post::create([
+            'published_at' => Carbon::yesterday(),
+        ]);
+
+        // Run publish Quietly Function.
+        $post->unpublishQuietly();
+
+        // Assert it doesn't trigger the updated event.
+        Event::assertNotDispatched('eloquent.updated: PawelMysior\Publishable\Tests\Post');
     }
 }

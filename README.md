@@ -47,7 +47,7 @@ class Post extends Model
 
 ## Add Fillable Attribute
 
-The `published()` function handles the update in a way where Laravel expects that the `published_at` field is fillable. Versions after 1.x now automatically make this field fillable by default to improve the ease of use for this library.
+In Version 1.x, the `published()` function handles the update in a way where Laravel expects that the `published_at` field is fillable. As of Version 2.x, we not use fill functionality so the fillable attribute is no longer required.
 
 ## Usage
 
@@ -71,6 +71,12 @@ $post->publish();
  
 // Unpublish the post
 $post->unpublish();
+
+// Publish the post without firing model events
+$post->publishQuietly();
+ 
+// Unpublish the post without firing model events
+$post->unpublishQuietly();
 ```
 
 A post is considered published when the `published_at` is not null and in the past.
