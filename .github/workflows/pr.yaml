@@ -2,7 +2,7 @@ name: Check Conventional PR
 
 on:
   pull_request:
-    branches: [ 1.x, 2.x ]
+    branches: [ *.x ]
 
 jobs:
   build:
