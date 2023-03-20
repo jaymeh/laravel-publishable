@@ -4,6 +4,15 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [3.0.0](https://github.com/jaymeh/laravel-publishable/compare/2.1.0...3.0.0) (2023-03-20)
+
+### ⚠ BREAKING CHANGES
+
+* Update dependencies to introduce Laravel 10 support. ([c326b9](https://github.com/jaymeh/laravel-publishable/commit/c326b90d5193c8a9d4bbaa6d0fefdf05aef84288))
+
+
+---
+
 ## [2.1.0](https://github.com/jaymeh/laravel-publishable/compare/2.0.0...2.1.0) (2022-09-27)
 
 ### Features
