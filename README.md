@@ -18,6 +18,7 @@ For details about which version of this package to use with your Laravel version
 | --------------- | --------------- |
 | <9.x            | 1.x             |
 | 9.x             | 2.x             |
+| 10.x            | 3.x             |
 
 ## Preparation
 
