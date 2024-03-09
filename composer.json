@@ -38,6 +38,7 @@
         }
     },
     "scripts": {
+        "test": "phpunit",
         "changelog": "conventional-changelog",
         "release": "conventional-changelog --commit",
         "release:patch": "conventional-changelog --patch --commit",
