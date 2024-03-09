@@ -4,10 +4,11 @@ namespace PawelMysior\Publishable\Tests;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Event;
+use PHPUnit\Framework\Attributes\Test;
 
 class PublishableTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function posts_with_published_at_date_in_the_past_are_published()
     {
         $post = Post::create([
@@ -18,7 +19,7 @@ class PublishableTest extends TestCase
         $this->assertFalse($post->isUnpublished());
     }
 
-    /** @test */
+    #[Test]
     public function posts_with_published_at_date_set_as_now_are_published()
     {
         $post = Post::create([
@@ -29,7 +30,7 @@ class PublishableTest extends TestCase
         $this->assertFalse($post->isUnpublished());
     }
 
-    /** @test */
+    #[Test]
     public function posts_with_published_at_date_in_the_future_are_not_published()
     {
         $post = Post::create([
@@ -40,7 +41,7 @@ class PublishableTest extends TestCase
         $this->assertTrue($post->isUnpublished());
     }
 
-    /** @test */
+    #[Test]
     public function posts_with_published_at_set_as_null_are_not_published()
     {
         $post = Post::create([
@@ -51,7 +52,7 @@ class PublishableTest extends TestCase
         $this->assertTrue($post->isUnpublished());
     }
 
-    /** @test */
+    #[Test]
     public function publishing_post_sets_the_published_at_date_as_now()
     {
         $post = Post::create([
@@ -63,7 +64,7 @@ class PublishableTest extends TestCase
         $this->assertEquals(Carbon::now()->timestamp, $post->published_at->timestamp);
     }
 
-    /** @test */
+    #[Test]
     public function unpublishing_post_sets_the_published_at_date_as_null()
     {
         $post = Post::create([
@@ -75,7 +76,7 @@ class PublishableTest extends TestCase
         $this->assertNull($post->published_at);
     }
 
-    /** @test */
+    #[Test]
     public function test_published_scope()
     {
         $firstPublishedPost = Post::create([
@@ -100,7 +101,7 @@ class PublishableTest extends TestCase
         $this->assertFalse($posts->contains($secondUnpublishedPost));
     }
     
-    /** @test */
+    #[Test]
     public function test_unpublished_scope()
     {
         $firstPublishedPost = Post::create([
@@ -125,18 +126,14 @@ class PublishableTest extends TestCase
         $this->assertTrue($posts->contains($secondUnpublishedPost));
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function test_published_at_field_is_not_fillable()
     {
         $post = new Post();
         $this->assertNotContains('published_at', $post->getFillable());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function test_publish_quietly_function_does_not_fire_model_events()
     {
         // Fake events so we can test on them.
@@ -154,9 +151,7 @@ class PublishableTest extends TestCase
         Event::assertNotDispatched('eloquent.updated: PawelMysior\Publishable\Tests\Post');
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function test_unpublish_quietly_function_does_not_fire_model_events()
     {
         // Fake events so we can test on them.
