@@ -4,6 +4,25 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [4.0.0](https://github.com/jaymeh/laravel-publishable/compare/3.0.0...4.0.0) (2024-03-13)
+
+### ⚠ BREAKING CHANGES
+
+* Bumps dependencies for Laravel 11 support ([8fc3fa](https://github.com/jaymeh/laravel-publishable/commit/8fc3fa81e63319ed76279e82d38483c7fd64d80e))
+
+### Features
+
+* Migrates phpunit configuration ([c6ffd7](https://github.com/jaymeh/laravel-publishable/commit/c6ffd7a7d21fdfd1dcf3890e3ed513e2c4514093))
+
+### Bug Fixes
+
+* Adds a new composer script for tests ([85d7f4](https://github.com/jaymeh/laravel-publishable/commit/85d7f4c54e3bc381f79bbe4337cfd6c90136c54e))
+* Ignore phpunit cache ([5014db](https://github.com/jaymeh/laravel-publishable/commit/5014dbb183d542eff010b01448da4479ccc9eefe))
+* Replace doc comments with attributes ready for PHPUnit 12 ([b0eff7](https://github.com/jaymeh/laravel-publishable/commit/b0eff76aab6c81f2d900249e2f3318c1cb9d8991))
+
+
+---
+
 ## [3.0.0](https://github.com/jaymeh/laravel-publishable/compare/2.1.0...3.0.0) (2023-03-20)
 
 ### ⚠ BREAKING CHANGES
