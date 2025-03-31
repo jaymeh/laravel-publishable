@@ -4,6 +4,15 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [5.0.0](https://github.com/jaymeh/laravel-publishable/compare/4.0.0...5.0.0) (2025-03-31)
+
+### ⚠ BREAKING CHANGES
+
+* Add support for Laravel 12. ([bc2618](https://github.com/jaymeh/laravel-publishable/commit/bc2618d8857e120dae1f8923af3a882882858ec5))
+
+
+---
+
 ## [4.0.0](https://github.com/jaymeh/laravel-publishable/compare/3.0.0...4.0.0) (2024-03-13)
 
 ### ⚠ BREAKING CHANGES
